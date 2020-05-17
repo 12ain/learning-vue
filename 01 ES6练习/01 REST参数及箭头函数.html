@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6</title>
+  </head>
+  <body>
+    <h2>演示</h2>
+  </body>
+  <script>
+    // 原写法
+    function sum(x, y, z) {
+      let total = 0;
+      if (x) total += x;
+      if (y) total += y;
+      if (z) total += z;
+      console.log(`total:${total}`);
+    }
+    sum(1, 1, 1);
+
+    // REST参数写法
+    function sum1(...m) {
+      let total = 0;
+      for (let i of m) {
+        total += i;
+      }
+      console.log(`total:${total}`);
+    }
+    sum1(1, 1, 1);
+
+    // ES6箭头函数写法
+    let sum3 = (...m) => {
+      let total = 0;
+      for (let i of m) {
+        total += i;
+      }
+      console.log(`total:${total}`);
+    };
+    sum3(1, 1, 1);
+
+    // 函数解构
+    var [x, y] = [4, 8];
+    console.log(...[4, 8]);
+
+    /* 数组的合并及赋值*/
+
+    // 写法1
+    var arr1 = [1, 2, 3];
+    var arr2 = [4, 5, 6];
+    console.log('concat:' + arr1.concat(arr2));
+
+    // 写法2
+    var arr3 = [...arr1, ...arr2];
+    console.log(arr3);
+
+    // 写法3
+    var arr4 = [1, ...arr3];
+    console.log(arr4);
+  </script>
+</html>
